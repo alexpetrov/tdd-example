@@ -12,22 +12,22 @@ public class Classifier {
 	}
 
 	public boolean isPerfect() {
-		return sumOfFactorsFor(number) - number == number;
+		return sumOfFactors() - number == number;
 	}
 
 	public boolean isDeficient() {
-		return sumOfFactorsFor(number) - number < number;
+		return sumOfFactors() - number < number;
 	}
 
 	public boolean isAbundant() {
-		return sumOfFactorsFor(number) - number > number;
+		return sumOfFactors() - number > number;
 	}
 
 	Set<Integer> getFactors() {
 		return factors;
 	}
 
-	void addFactor(int i) {
+	void addPairFactors(int i) {
 		if (isFactor(i)) {
 			factors.add(i);
 			factors.add(number / i);
@@ -50,11 +50,11 @@ public class Classifier {
 
 	private void calculateFactors() {
 		for (int i = 2; i < Math.sqrt(number); i++) {
-			addFactor(i);
+			addPairFactors(i);
 		}
 	}
 
-	private int sumOfFactorsFor(int number2) {
+	private int sumOfFactors() {
 		int sum = 0;
 		for (int i : factors) {
 			sum += i;
