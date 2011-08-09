@@ -23,7 +23,7 @@ public class Classifier {
 		return sumOfFactors() - number > number;
 	}
 
-	Set<Integer> getFactors() {
+	public Set<Integer> getFactors() {
 		return factors;
 	}
 
