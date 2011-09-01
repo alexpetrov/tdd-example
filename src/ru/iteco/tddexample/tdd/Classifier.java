@@ -20,7 +20,7 @@ public class Classifier {
 		factors.add(1);
 		factors.add(number);
 		calculateFactors();
-		calcuateSumOfFactors();
+		calculateSumOfFactors();
 	}
 
 	public boolean isPerfect() {
@@ -61,7 +61,7 @@ public class Classifier {
 		for (int i : factors) {
 			sum += i;
 		}
-		sumOfFactors = sum;
+		this.sumOfFactors = sum;
 	}
 
 }
